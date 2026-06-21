@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "SavedLocation": {
+      "title": "Saved Location",
+      "description": "A bookmarked location by the user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner UID"
+        },
+        "name": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "number",
+          "description": "Server timestamp"
+        }
+      },
+      "required": ["userId", "name", "lat", "lng", "createdAt"]
+    }
+  },
+  "firestore": {
+    "savedLocations/{locationId}": {
+      "schema": {
+        "$ref": "#/entities/SavedLocation"
+      },
+      "description": "Stores user saved locations."
+    }
+  }
+}

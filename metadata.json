@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
-  "requestFramePermissions": [],
+  "name": "Neo Adventure",
+  "description": "A modern 3D map navigation app built by NeoNotion.",
+  "requestFramePermissions": ["geolocation"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
