@@ -14,6 +14,26 @@
   }
 }
 
+/* 3D Navigation Cockpit View & dynamic orientation */
+.is-3d-active {
+  perspective: 1200px;
+}
+.is-3d-active .leaflet-map-pane {
+  transform: rotateX(54deg) rotateZ(var(--map-rotation, 0deg)) translateY(-8%) scale(1.2);
+  transform-origin: 50% 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+/* Counter-rotate markers and popups internally to stand upright in 3D perspective space */
+.is-3d-active .leaflet-popup {
+  transform: rotateX(-54deg) translateY(-25px) !important;
+  transform-origin: 50% 100%;
+}
+.is-3d-active .custom-user-icon > div,
+.is-3d-active .custom-dest-icon > div {
+  transform: rotateX(-54deg) !important;
+  transform-origin: 50% 100%;
+}
+
 @keyframes pulse-ring {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
